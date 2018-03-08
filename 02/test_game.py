@@ -15,7 +15,7 @@ class TestGame(unittest.TestCase):
 
     def test_draw_letters(self):
         letter_str = ''.join(self.draw)
-        self.assertRegex(letter_str, r'^[A-Z]{%s}$' % NUM_LETTERS)
+        self.assertRegex(letter_str, r'^[A-z]{%s}$' % NUM_LETTERS)
 
     # from ch01
     def test_calc_word_value(self):
@@ -35,7 +35,7 @@ class TestGame(unittest.TestCase):
         self.assertEqual(gen_permutations_any_list, gen_permutations_n_letters)
 
     def test_get_possible_dict_words(self):
-        self.fixed_draw = list('garytev'.upper())
+        self.fixed_draw = list('garytev')
         words = get_possible_dict_words(self.fixed_draw)
         self.assertEqual(len(words), 137)
 
